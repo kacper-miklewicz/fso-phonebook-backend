@@ -5,6 +5,7 @@ morgan.token("body", (req) => JSON.stringify(req.body) || "<empty body>");
 
 const app = express();
 app.use(express.json());
+app.use(express.static("dist"));
 app.use(morgan(":method :url :status :response-time ms :body"));
 
 let phonebook = [
